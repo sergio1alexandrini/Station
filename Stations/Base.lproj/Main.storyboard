@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Choose Stations-->
+        <!--Выбор станций-->
         <scene sceneID="Wk4-1Q-B7c">
             <objects>
                 <tableViewController id="m9K-LE-L7y" customClass="StationsViewController" customModule="Stations" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fQI-Nz-0gA" kind="presentation" identifier="ClarifyFrom" id="ehW-ZM-JVG"/>
+                                            <segue destination="fQI-Nz-0gA" kind="presentation" identifier="ClarifyCityAndCountryFrom" id="ehW-ZM-JVG"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="q1R-Yz-U5B">
@@ -69,7 +69,7 @@
                                             <segue destination="1hP-4I-Jfc" kind="show" identifier="ShowStationFromInfo" trigger="accessoryAction" id="DeU-D3-m41"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="nQn-G2-6Y2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="nQn-G2-6Y2">
                                         <rect key="frame" x="0.0" y="201.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nQn-G2-6Y2" id="dcy-e9-3HI">
@@ -122,7 +122,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fQI-Nz-0gA" kind="presentation" identifier="ClarifyTo" id="4QX-al-Voe"/>
+                                            <segue destination="fQI-Nz-0gA" kind="presentation" identifier="ClarifyCityAndCountryTo" id="4QX-al-Voe"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="gLB-Nc-0um">
@@ -148,10 +148,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="QWA-Bz-gtj" kind="show" identifier="SelectStationTo" id="B7a-4D-eZk"/>
-                                            <segue destination="1hP-4I-Jfc" kind="show" identifier="ShowStationToInfo" trigger="accessoryAction" id="rZs-gZ-kC7"/>
+                                            <segue destination="1hP-4I-Jfc" kind="show" identifier="ShowStationInfoTo" trigger="accessoryAction" id="rZs-gZ-kC7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UCE-ot-ytd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="UCE-ot-ytd">
                                         <rect key="frame" x="0.0" y="383.5" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UCE-ot-ytd" id="OC0-4C-31c">
@@ -211,10 +211,10 @@
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="m9K-LE-L7y" id="aqi-2F-D2s"/>
-                            <outlet property="delegate" destination="m9K-LE-L7y" id="6ps-WD-mmu"/>
+                            <outlet property="delegate" destination="m9K-LE-L7y" id="qTC-pn-Or1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Choose Stations" id="1ho-Tk-HSZ"/>
+                    <navigationItem key="navigationItem" title="Выбор станций" id="1ho-Tk-HSZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="cellStationFrom" destination="q1R-Yz-U5B" id="AMg-jd-UCX"/>
@@ -367,7 +367,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDl-Lp-XSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="230"/>
+            <point key="canvasLocation" x="1624" y="230"/>
         </scene>
         <!--Countries-->
         <scene sceneID="GmJ-yW-YhY">
@@ -406,7 +406,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHL-5G-fc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="1069"/>
+            <point key="canvasLocation" x="1153" y="1043"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QwB-59-w3s">
@@ -635,7 +635,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3L-Or-hYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="-556"/>
+            <point key="canvasLocation" x="1153" y="-476"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qLT-D2-Vna">
@@ -654,12 +654,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2L-Jc-Lul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="230"/>
+            <point key="canvasLocation" x="1153" y="230"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rZs-gZ-kC7"/>
-        <segue reference="ehW-ZM-JVG"/>
+        <segue reference="4QX-al-Voe"/>
         <segue reference="ZLz-4N-Sgh"/>
     </inferredMetricsTieBreakers>
 </document>
