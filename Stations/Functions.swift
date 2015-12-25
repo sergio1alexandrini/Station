@@ -7,10 +7,14 @@
 //
 
 import UIKit
-import CoreLocation
-import SwiftyJSON
 
-func GetCountries(cities : [City]) -> ([Int : [City]], [Country], [String : Country]){
+
+func afterDelay(seconds: Double, closure: () -> ()) {
+    let when = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
+    dispatch_after(when, dispatch_get_main_queue(), closure)
+}
+
+func GetDataFromCities(cities : [City]) -> ([Int : [City]], [Country], [String : Country]){
     var i = 0;
     var countries = [Country]()
     var countriesDict = [String : Country]()
@@ -29,8 +33,9 @@ func GetCountries(cities : [City]) -> ([Int : [City]], [Country], [String : Coun
         }
     }
     
-    return (lookUp, countries, countriesDict)
+    return (sortLookupByName(lookUp), sortLocationsByName(countries) as! [Country], countriesDict)
 }
+
 
 func toDictionary(cities : [City]) -> [Int : City]{
     var res = [Int : City]()
@@ -41,77 +46,32 @@ func toDictionary(cities : [City]) -> [Int : City]{
     return res
 }
 
+func sortLocationsByName(locations : [Location]) -> [Location]{
+    return locations.sort {$0.Title.compare($1.Title) == .OrderedAscending }
+}
 
-class JsonParser {
-    private let file = "allStations"
-    
-    private func ParseStationsFromJson(json : JSON) -> [Station]{
-        var stations = [Station]()
-        
-        for (_, station):(String, JSON) in json {
-            let countryTitle : String = station["countryTitle"].string!
-            let districtTitle : String = station["districtTitle"].string!
-            let cityId : Int = station["cityId"].int!
-            let cityTitle : String = station["cityTitle"].string!
-            let regionTitle : String = station["regionTitle"].string!
-            
-            let latitude  = station["point"]["latitude"].double!
-            let longitude  = station["point"]["longitude"].double!
-            
-            let point = CLLocation(latitude: latitude, longitude: longitude)
-            
-            let stationId = station["stationId"].int!
-            let stationTitle = station["stationTitle"].string!
-            
-            let station = Station(countryTitle: countryTitle, point: point, districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stationId: stationId, stationTitle: stationTitle)
-            
-            stations.append(station)
-        }
-        
-        return stations
-    }
-    
-    private func GetCitiesFromJson(json : JSON) -> [City]{
-        var cities = [City]()
-        
-        for (_, city):(String, JSON) in json {
-            let countryTitle : String = city["countryTitle"].string!
-            let districtTitle : String = city["districtTitle"].string!
-            let cityId : Int = city["cityId"].int!
-            let cityTitle : String = city["cityTitle"].string!
-            let regionTitle : String = city["regionTitle"].string!
-            
-            let latitude  = city["point"]["latitude"].double!
-            let longitude  = city["point"]["longitude"].double!
-            
-            let point = CLLocation(latitude: latitude, longitude: longitude)
-            
-            let stationsJson = city["stations"]
-            let stations = ParseStationsFromJson(stationsJson)
-            
-            let city = City(countryTitle: countryTitle, point: point, districtTitle: districtTitle, cityId: cityId, cityTitle: cityTitle, regionTitle: regionTitle, stations: stations)
-            
-            cities.append(city)
-        }
-        
-        return cities
-    }
-    
-    func Parse() -> ([City],[City])?{
-        if let path = NSBundle.mainBundle().URLForResource(file, withExtension: "json"),
-            let jsonData = NSData(contentsOfURL: path){
-            let json = JSON(data: jsonData)
-            
-            let citiesFromJson = json["citiesFrom"]
-            let citiesToJson = json["citiesTo"]
-            
-            let citiesFrom = GetCitiesFromJson(citiesFromJson)
-            let citiesTo = GetCitiesFromJson(citiesToJson)
-            
-            return (citiesFrom, citiesTo)
-        }
 
-        return nil
+func sortLookupByName<TKey : Hashable>(lookUp  : [TKey : [City]]) -> [TKey : [City]]{
+    var res = [TKey : [City]]()
+    for (key, value) in lookUp{
+        let sortedArr = sortLocationsByName(value) as! [City]
+        res[key] = sortedArr
     }
+    
+    return res
+}
+
+func notifyUser(controller : UIViewController, title: String, message: String) -> Void
+{
+    let alert = UIAlertController(title: title,
+        message: message,
+        preferredStyle: UIAlertControllerStyle.Alert)
+    
+    let cancelAction = UIAlertAction(title: "OK",
+        style: .Cancel, handler: nil)
+    
+    alert.addAction(cancelAction)
+    controller.presentViewController(alert, animated: true,
+        completion: nil)
 }
 

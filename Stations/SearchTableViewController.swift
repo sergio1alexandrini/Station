@@ -44,6 +44,15 @@ class SearchTableViewController: UITableViewController {
     var searchController : UISearchController!
     
     override func viewDidLoad() {
+        switch(pickingType){
+        case .City :
+            title = "Город"
+        case .Country :
+            title = "Страна"
+        case .StationFrom, .StationTo :
+            title = "Станция"
+        }
+        
         filteredCollection = collection
         adjustSearchController()
     }
@@ -54,21 +63,13 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.delegate = self
         definesPresentationContext = true
         
-        // If we are using this same view controller to present the results
-        // dimming it out wouldn't make sense.  Should set probably only set
-        // this to yes if using another controller to display the search results.
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.barStyle = UIBarStyle.Black
         searchController.searchBar.barTintColor = UIColor.whiteColor()
         searchController.searchBar.backgroundColor = UIColor.clearColor()
-        //searchController.searchBar.tintColor = UIColor(netHex: 0xecf0f1)
-        //searchController.searchBar.sizeToFit()
         
-        // By default the navigation bar hides when presenting the
-        // search interface.  Obviously we don't want this to happen if
-        // our search bar is inside the navigation bar.
         searchController.hidesNavigationBarDuringPresentation = false
-        self.navigationController!.navigationBar.translucent = false
+        //self.navigationController!.navigationBar.translucent = false
 
         self.presentViewController(self.searchController, animated:true, completion:nil);
         
@@ -81,7 +82,6 @@ class SearchTableViewController: UITableViewController {
         if let textLabel = cell.textLabel {
             textLabel.text = filteredCollection[indexPath.row].Title
         }
-        // Configure the cell...
         
         return cell
     }

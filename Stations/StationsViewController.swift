@@ -30,53 +30,38 @@ StationsPickerDelegate{
 
     @IBOutlet weak var departureDate: UILabel!
     
-    var parser = JsonParser()
+    
     var locale = NSLocale(localeIdentifier: "ru_RU")
     var datePickerVisible = false
     
     var currentDate = NSDate()
-    var maxDateIntervalFromNow : Double = 90
-    
-    var countriesFromDictString = [String : Country]()
-    var countriesToDictString = [String : Country]()
-    
-    var countriesFromDict = [Int : [City]]()
-    var countriesToDict = [Int : [City]]()
-    
-    var citiesFromDict = [Int : City]()
-    var citiesToDict = [Int : City]()
-    
-    var countriesFrom = [Country]()
-    var countriesTo = [Country]()
-    
-    var citiesFrom = [City]()
-    var citiesTo = [City]()
-    
-    var stationsFrom = [Station]()
-    var stationsTo = [Station]()
-    
-    var countryFrom : Country!
-    var countryTo :  Country!
-    
-    var cityFrom : City!
-    var cityTo : City!
-    
-    var stFrom : Station!
-    var stTo : Station!
-    
     var date = NSDate()
+    var maxDateIntervalFromNow : Double = 90
+    var datePickerHeight : CGFloat = 217
+    var tableRowHeight: CGFloat = 44
+    
+    var dataModel = DataModel()
+    var currentCountryFrom : Country!
+    var currentCountryTo :  Country!
+    
+    var currentCityFrom : City!
+    var currentCityTo : City!
+    
+    var currentStationFrom : Station!
+    var currentStationTo : Station!
+    
     
     @IBAction func clearFrom(){
-        self.countryFrom = nil
-        self.cityFrom = nil
-        self.stFrom = nil
+        self.currentCountryFrom = nil
+        self.currentCityFrom = nil
+        self.currentStationFrom = nil
         configureLabels()
     }
     
     @IBAction func clearTo(){
-        self.countryTo = nil
-        self.cityTo = nil
-        self.stTo = nil
+        self.currentCountryTo = nil
+        self.currentCityTo = nil
+        self.currentStationTo = nil
         configureLabels()
     }
     
@@ -84,13 +69,13 @@ StationsPickerDelegate{
         let _station = station as! Station
         
         if directionFrom{
-            countryFrom = countriesFromDictString[_station.countryTitle]
-            cityFrom = citiesFromDict[_station.cityId]
-            stFrom = _station
+            currentCountryFrom = dataModel.countriesFromDictionaryByCountryTitle[_station.countryTitle]
+            currentCityFrom = dataModel.citiesFromDict[_station.cityId]
+            currentStationFrom = _station
         } else {
-            countryTo = countriesToDictString[_station.countryTitle]
-            cityTo = citiesToDict[_station.cityId]
-            stTo = _station
+            currentCountryTo = dataModel.countriesToDictionaryByCountryTitle[_station.countryTitle]
+            currentCityTo = dataModel.citiesToDict[_station.cityId]
+            currentStationTo = _station
         }
         
         configureLabels()
@@ -99,13 +84,13 @@ StationsPickerDelegate{
     
     func didPickCountryAndCityForDirection(country : Country!, city : City!, directionFrom : Bool){
         if directionFrom{
-            countryFrom = country
-            cityFrom = city
-            stFrom = nil
+            currentCountryFrom = country
+            currentCityFrom = city
+            currentStationFrom = nil
         } else {
-            countryTo = country
-            cityTo = city
-            stTo = nil
+            currentCountryTo = country
+            currentCityTo = city
+            currentStationTo = nil
         }
         
         configureLabels()
@@ -114,28 +99,24 @@ StationsPickerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        dataModel.LoadData()
         
-        let cities = parser.Parse()
-        prepareData(cities!)
         configureLabels()
         updateDueDateLabel()
     }
     
     func configureLabels(){
-        if countryFrom == nil {
-            if cityFrom == nil{
-                clarifyFrom.text = "Уточнить"
-                clarifyFrom.textColor = UIColor.grayColor()
-            }
+        if currentCountryFrom == nil && currentCityFrom == nil{
+            clarifyFrom.text = "Уточнить"
+            clarifyFrom.textColor = UIColor.grayColor()
         } else {
-            clarifyFrom.text = "\(countryFrom.countryTitle), \(cityFrom.cityTitle)"
+            clarifyFrom.text = "\(currentCountryFrom.countryTitle), \(currentCityFrom.cityTitle)"
             clarifyFrom.textColor = UIColor.blackColor()
-            
-            
         }
         
-        if let _ = stFrom{
-            stationFrom.text = stFrom.stationTitle
+        if let _ = currentStationFrom{
+            stationFrom.text = currentStationFrom.stationTitle
             stationFrom.textColor = UIColor.blackColor()
             
             cellStationFrom.accessoryType = .DetailDisclosureButton
@@ -146,18 +127,16 @@ StationsPickerDelegate{
             cellStationFrom.accessoryType = .None
         }
 
-        if countryTo == nil {
-            if cityTo == nil{
-                clarifyTo.text = "Уточнить"
-                clarifyTo.textColor = UIColor.grayColor()
-            }
+        if currentCountryTo == nil && currentCityTo == nil{
+            clarifyTo.text = "Уточнить"
+            clarifyTo.textColor = UIColor.grayColor()
         } else {
-            clarifyTo.text = "\(countryTo.countryTitle), \(cityTo.cityTitle)"
+            clarifyTo.text = "\(currentCountryTo.countryTitle), \(currentCityTo.cityTitle)"
             clarifyTo.textColor = UIColor.blackColor()
         }
         
-        if let _ = stTo{
-            stationTo.text = stTo.stationTitle
+        if let _ = currentStationTo{
+            stationTo.text = currentStationTo.stationTitle
             stationTo.textColor = UIColor.blackColor()
             
             cellStationTo.accessoryType = .DetailDisclosureButton
@@ -168,74 +147,57 @@ StationsPickerDelegate{
             cellStationTo.accessoryType = .None
         }
         
-        departureDate.text = ""
+        updateDueDateLabel()
     }
     
-    func prepareData(cities :([City],[City])){
-        print("prepareData")
-        for city in cities.0{
-            stationsFrom.appendContentsOf(city.stations)
+    func configureDestinationController(controller : CityAndCountryTableViewController, directionFrom : Bool){
+        controller.delegate = self
+        controller.isDirectionFrom = directionFrom
+        if directionFrom {
+            controller.cities = dataModel.citiesFrom
+            controller.city = currentCityFrom
+            controller.country = currentCountryFrom
+            controller.countries = dataModel.countriesFrom
+            controller.countriesLookUp = dataModel.countriesFromLookUp
+            controller.citiesDict = dataModel.citiesFromDict
+            controller.countriesDictionaryByCountryTitle = dataModel.countriesFromDictionaryByCountryTitle
+        } else {
+            controller.cities = dataModel.citiesTo
+            controller.city = currentCityTo
+            controller.country = currentCountryTo
+            controller.countries = dataModel.countriesTo
+            controller.countriesLookUp = dataModel.countriesToLookUp
+            controller.countriesDictionaryByCountryTitle = dataModel.countriesToDictionaryByCountryTitle
+            controller.citiesDict = dataModel.citiesToDict
         }
-        
-        for city in cities.1{
-            stationsTo.appendContentsOf(city.stations)
-        }
-        
-        citiesFromDict = toDictionary(cities.0)
-        citiesToDict = toDictionary(cities.1)
-        
-        citiesFrom = cities.0
-        citiesTo = cities.1
-        
-        (countriesFromDict, countriesFrom, countriesFromDictString) = GetCountries(cities.0)
-        (countriesToDict, countriesTo, countriesToDictString) = GetCountries(cities.1)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ClarifyFrom" {
+        if segue.identifier == "ClarifyCityAndCountryFrom" {
             let nvc = segue.destinationViewController as!  UINavigationController
             let vc = nvc.topViewController as! CityAndCountryTableViewController
-            vc.delegate = self
-            vc.cities = citiesFrom
-            vc.city = cityFrom
-            vc.country = countryFrom
-            vc.countries = countriesFrom
-            vc.countriesDict = countriesFromDict
-            vc.citiesDict = citiesFromDict
-            vc.countriesDictString = countriesFromDictString
-            vc.isFrom = true
-        } else if segue.identifier == "ClarifyTo" {
+            configureDestinationController(vc, directionFrom : true)
+        } else if segue.identifier == "ClarifyCityAndCountryTo" {
             let nvc = segue.destinationViewController as!  UINavigationController
             let vc = nvc.topViewController as! CityAndCountryTableViewController
-            vc.delegate = self
-            vc.cities = citiesTo
-            vc.city = cityTo
-            vc.country = countryTo
-            vc.countries = countriesTo
-            vc.isFrom = false
-            vc.countriesDict = countriesToDict
-            vc.countriesDictString = countriesToDictString
-            vc.citiesDict = citiesToDict
+            configureDestinationController(vc, directionFrom : false)
         }else if segue.identifier == "SelectStationFrom" {
             let vc = segue.destinationViewController as!  SearchTableViewController
             vc.delegateStation = self
-            
-            vc.collection =  cityFrom == nil ? stationsFrom : cityFrom.stations
+            vc.collection =  currentCityFrom == nil ? dataModel.stationsFrom : currentCityFrom.stations
             vc.pickingType = .StationFrom
         }else if segue.identifier == "SelectStationTo" {
             let vc = segue.destinationViewController as!  SearchTableViewController
             vc.delegateStation = self
-            
-            vc.collection =  cityTo == nil ? stationsTo : cityTo.stations
+            vc.collection =  currentCityTo == nil ? dataModel.stationsTo : currentCityTo.stations
             vc.pickingType = .StationTo
-        }else if segue.identifier == "ShowStationFromInfo" {
+        }else if segue.identifier == "ShowStationInfoFrom" {
             let vc = segue.destinationViewController as!  StationInfoViewController
-            print(stFrom)
-            vc.currentStation = stFrom
-        }else if segue.identifier == "ShowStationToInfo" {
+            vc.currentStation = currentStationFrom
+        }else if segue.identifier == "ShowStationInfoTo" {
             let vc = segue.destinationViewController as!  StationInfoViewController
-            print(stTo)
-            vc.currentStation = stTo
+            print(currentStationTo)
+            vc.currentStation = currentStationTo
         }
     }
     
@@ -253,10 +215,6 @@ StationsPickerDelegate{
         let indexPathDateRow = NSIndexPath(forRow: 0, inSection: 2)
         let indexPathDatePicker = NSIndexPath(forRow: 1, inSection: 2)
         
-        if let dataCell = tableView.cellForRowAtIndexPath(indexPathDateRow){
-            dataCell.detailTextLabel!.textColor = dataCell.detailTextLabel!.tintColor
-        }
-        
         tableView.beginUpdates()
         tableView.insertRowsAtIndexPaths([indexPathDatePicker], withRowAnimation: .Fade)
         tableView.reloadRowsAtIndexPaths([indexPathDateRow], withRowAnimation: .None)
@@ -267,6 +225,9 @@ StationsPickerDelegate{
             let datePicker = pickerCell.viewWithTag(100) as! UIDatePicker
             datePicker.setDate(date, animated: false)
         }
+        
+        let offset = tableView.frame.origin.y
+        tableView.setContentOffset(CGPointMake(0, offset + tableRowHeight), animated: true)
     }
     
     func hideDatePicker() {
@@ -274,13 +235,12 @@ StationsPickerDelegate{
             datePickerVisible = false
             let indexPathDateRow = NSIndexPath(forRow: 0, inSection: 2)
             let indexPathDatePicker = NSIndexPath(forRow: 1, inSection: 2)
-            if let cell = tableView.cellForRowAtIndexPath(indexPathDateRow) {
-                cell.detailTextLabel!.textColor = UIColor(white: 0, alpha: 0.4)
-            }
+
             tableView.beginUpdates()
             tableView.reloadRowsAtIndexPaths([indexPathDateRow], withRowAnimation: .None)
             tableView.deleteRowsAtIndexPaths([indexPathDatePicker], withRowAnimation: .Fade)
-            tableView.endUpdates() }
+            tableView.endUpdates()
+        }
     }
     
     override func tableView(tableView: UITableView,
@@ -320,8 +280,11 @@ StationsPickerDelegate{
                 hideDatePicker()
             }
         } else {
-            super.tableView(tableView, didSelectRowAtIndexPath: indexPath)
+            if datePickerVisible{
+                hideDatePicker()
+            }
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -342,7 +305,7 @@ StationsPickerDelegate{
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 2 && indexPath.row == 1{
-            return 217
+            return datePickerHeight
         } else {
             return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         }

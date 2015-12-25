@@ -23,6 +23,7 @@ class StationInfoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Информация о станции"
         configureLabels()
     }
     

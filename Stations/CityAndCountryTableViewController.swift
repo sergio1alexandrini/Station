@@ -15,13 +15,13 @@ protocol CityOrCountryPickerDelegate : class {
 
 class CityAndCountryTableViewController: UITableViewController, CityOrCountryPickerDelegate {
     @IBOutlet weak var doneButton: UIBarButtonItem!
-    
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
-    var isFrom : Bool = false
     
     weak var delegate : CityAndCountryPickerDelegate!
+    
+    var isDirectionFrom : Bool = false
     
     var country : Country!
     var city : City!
@@ -30,12 +30,12 @@ class CityAndCountryTableViewController: UITableViewController, CityOrCountryPic
     var cities : [City]!
     
     
-    var countriesDictString = [String : Country]()
-    var countriesDict = [Int : [City]]()
+    var countriesDictionaryByCountryTitle = [String : Country]()
+    var countriesLookUp = [Int : [City]]()
     var citiesDict = [Int : City]()
     
     @IBAction func done(){
-        delegate.didPickCountryAndCityForDirection(country, city : city, directionFrom : isFrom)
+        delegate.didPickCountryAndCityForDirection(country, city : city, directionFrom : isDirectionFrom)
     }
     
     @IBAction func clear(){
@@ -55,7 +55,7 @@ class CityAndCountryTableViewController: UITableViewController, CityOrCountryPic
         } else if pickingType == .City{
             self.city = location as! City
             if self.country == nil{
-                self.country = countriesDictString[self.city.countryTitle]
+                self.country = countriesDictionaryByCountryTitle[self.city.countryTitle]
             }
         }
         
@@ -80,7 +80,7 @@ class CityAndCountryTableViewController: UITableViewController, CityOrCountryPic
         let vc = segue.destinationViewController as!  SearchTableViewController
         vc.delegate = self
         if segue.identifier == "SelectCity" {
-            vc.collection =  country == nil ? cities : countriesDict[country.countryId]!
+            vc.collection =  country == nil ? cities : countriesLookUp[country.countryId]!
             vc.pickingType = .City
         } else if segue.identifier == "SelectCountry" {
             vc.collection = countries
