@@ -1,0 +1,117 @@
+
+/* Class = "UILabel"; text = "Город"; ObjectID = "06W-xd-X30"; */
+"06W-xd-X30.text" = "Город";
+
+/* Class = "UITableViewSection"; headerTitle = "Станция отправления"; ObjectID = "1YZ-oM-Z3i"; */
+"1YZ-oM-Z3i.headerTitle" = "Станция отправления";
+
+/* Class = "UILabel"; text = "Страна"; ObjectID = "1eR-Jy-1qj"; */
+"1eR-Jy-1qj.text" = "Страна";
+
+/* Class = "UINavigationItem"; title = "Выбор станций"; ObjectID = "1ho-Tk-HSZ"; */
+"1ho-Tk-HSZ.title" = "Выбор станций";
+
+/* Class = "UILabel"; text = "Страна"; ObjectID = "1xo-ht-gWb"; */
+"1xo-ht-gWb.text" = "Страна";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "3GI-no-IO1"; */
+"3GI-no-IO1.text" = "Detail";
+
+/* Class = "UITableViewSection"; headerTitle = "Координаты"; ObjectID = "3We-ra-cC9"; */
+"3We-ra-cC9.headerTitle" = "Координаты";
+
+/* Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "5bE-b0-RGe"; */
+"5bE-b0-RGe.normalTitle" = "Очистить";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "65N-yx-Sic"; */
+"65N-yx-Sic.text" = "Detail";
+
+/* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "9r4-Bh-57n"; */
+"9r4-Bh-57n.title" = "Отмена";
+
+/* Class = "UILabel"; text = "Долгота"; ObjectID = "Aij-xF-bTs"; */
+"Aij-xF-bTs.text" = "Долгота";
+
+/* Class = "UILabel"; text = "Название"; ObjectID = "BdI-2s-KkB"; */
+"BdI-2s-KkB.text" = "Название";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "CjI-xW-7cb"; */
+"CjI-xW-7cb.text" = "Detail";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CxA-Do-mrS"; */
+"CxA-Do-mrS.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "FBu-Iq-hKI"; */
+"FBu-Iq-hKI.normalTitle" = "Очистить";
+
+/* Class = "UITableViewSection"; headerTitle = "Общая информация"; ObjectID = "FkH-Gh-OO2"; */
+"FkH-Gh-OO2.headerTitle" = "Общая информация";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FuC-QM-fKv"; */
+"FuC-QM-fKv.text" = "Label";
+
+/* Class = "UILabel"; text = "Широта"; ObjectID = "GS6-tn-e0D"; */
+"GS6-tn-e0D.text" = "Широта";
+
+/* Class = "UITableViewSection"; headerTitle = "Дата отправления"; ObjectID = "IIu-VM-IUq"; */
+"IIu-VM-IUq.headerTitle" = "Дата отправления";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "JnB-3G-fan"; */
+"JnB-3G-fan.text" = "Title";
+
+/* Class = "UITableViewSection"; headerTitle = "Станция назначения"; ObjectID = "PBb-BM-bxN"; */
+"PBb-BM-bxN.headerTitle" = "Станция назначения";
+
+/* Class = "UILabel"; text = "Регион"; ObjectID = "S74-W9-atW"; */
+"S74-W9-atW.text" = "Регион";
+
+/* Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "UwU-zt-y0S"; */
+"UwU-zt-y0S.normalTitle" = "Очистить";
+
+/* Class = "UILabel"; text = "Город"; ObjectID = "WKO-SD-xFK"; */
+"WKO-SD-xFK.text" = "Город";
+
+/* Class = "UIBarButtonItem"; title = "Готово"; ObjectID = "YcX-sx-3Cs"; */
+"YcX-sx-3Cs.title" = "Готово";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "a9z-ho-0Oz"; */
+"a9z-ho-0Oz.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "aVH-kC-mZe"; */
+"aVH-kC-mZe.text" = "Label";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "bl2-T4-WqG"; */
+"bl2-T4-WqG.text" = "Detail";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "e96-H4-ha8"; */
+"e96-H4-ha8.text" = "Detail";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "e9L-vZ-O2z"; */
+"e9L-vZ-O2z.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "igF-1u-D0f"; */
+"igF-1u-D0f.text" = "Label";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "iz0-FU-SCd"; */
+"iz0-FU-SCd.text" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Countries"; ObjectID = "oWH-E0-xdS"; */
+"oWH-E0-xdS.title" = "Countries";
+
+/* Class = "UITableViewSection"; headerTitle = "Станция"; ObjectID = "pVe-eV-UYk"; */
+"pVe-eV-UYk.headerTitle" = "Станция";
+
+/* Class = "UINavigationItem"; title = "Уточните место"; ObjectID = "rNp-Hl-Vsg"; */
+"rNp-Hl-Vsg.title" = "Уточните место";
+
+/* Class = "UILabel"; text = "Дата"; ObjectID = "sze-jH-Tnk"; */
+"sze-jH-Tnk.text" = "Дата";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "vKa-9h-QYf"; */
+"vKa-9h-QYf.text" = "Detail";
+
+/* Class = "UILabel"; text = "Район"; ObjectID = "vMK-JX-b7c"; */
+"vMK-JX-b7c.text" = "Район";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "zwC-sQ-xQW"; */
+"zwC-sQ-xQW.text" = "Detail";
