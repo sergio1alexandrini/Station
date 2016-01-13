@@ -1,7 +1,3 @@
-
-/* Class = "UILabel"; text = "Город"; ObjectID = "06W-xd-X30"; */
-"06W-xd-X30.text" = "Город";
-
 /* Class = "UITableViewSection"; headerTitle = "Станция отправления"; ObjectID = "1YZ-oM-Z3i"; */
 "1YZ-oM-Z3i.headerTitle" = "Станция отправления";
 
@@ -23,11 +19,14 @@
 /* Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "5bE-b0-RGe"; */
 "5bE-b0-RGe.normalTitle" = "Очистить";
 
-/* Class = "UILabel"; text = "Detail"; ObjectID = "65N-yx-Sic"; */
-"65N-yx-Sic.text" = "Detail";
+/* Class = "UILabel"; text = "Город"; ObjectID = "06W-xd-X30"; */
+"06W-xd-X30.text" = "Город";
 
 /* Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "9r4-Bh-57n"; */
 "9r4-Bh-57n.title" = "Отмена";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "65N-yx-Sic"; */
+"65N-yx-Sic.text" = "Detail";
 
 /* Class = "UILabel"; text = "Долгота"; ObjectID = "Aij-xF-bTs"; */
 "Aij-xF-bTs.text" = "Долгота";
@@ -83,11 +82,11 @@
 /* Class = "UILabel"; text = "Detail"; ObjectID = "bl2-T4-WqG"; */
 "bl2-T4-WqG.text" = "Detail";
 
-/* Class = "UILabel"; text = "Detail"; ObjectID = "e96-H4-ha8"; */
-"e96-H4-ha8.text" = "Detail";
-
 /* Class = "UILabel"; text = "Label"; ObjectID = "e9L-vZ-O2z"; */
 "e9L-vZ-O2z.text" = "Label";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "e96-H4-ha8"; */
+"e96-H4-ha8.text" = "Detail";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "igF-1u-D0f"; */
 "igF-1u-D0f.text" = "Label";
@@ -115,3 +114,4 @@
 
 /* Class = "UILabel"; text = "Detail"; ObjectID = "zwC-sQ-xQW"; */
 "zwC-sQ-xQW.text" = "Detail";
+

@@ -13,8 +13,9 @@ import SwiftyJSON
 
 class JsonParser {
     private let file = "allStations"
-    var progressView: UIProgressView?
-    var progressLabel: UILabel?
+    
+    var delegate : ProgressUpdaterDelegate!
+
     
     private func ParseStationsFromJson(json : JSON) -> [Station]{
         var stations = [Station]()
@@ -46,9 +47,9 @@ class JsonParser {
         var cities = [City]()
         
         for (_, city):(String, JSON) in json {
-            //self.updateProgress(Float(0.44) / Float(json.count))
             
-            
+            self.delegate.updateProgress(Float(0.44) / Float(json.count))
+
             let countryTitle : String = city["countryTitle"].string!
             let districtTitle : String = city["districtTitle"].string!
             let cityId : Int = city["cityId"].int!
@@ -86,12 +87,6 @@ class JsonParser {
         }
         
         return nil
-    }
-
-    func updateProgress(add : Float) {
-        progressView?.progress += add
-        let progressValue = self.progressView?.progress
-        progressLabel?.text = "Загрузка \(progressValue! * 100) %"
     }
 }
 

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="Stations/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
+    </header>
+    <body/>
+  </file>
+  <file original="Stations/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
+    </header>
+    <body>
+      <trans-unit id="1YZ-oM-Z3i.headerTitle">
+        <source>Станция отправления</source>
+        <target>Станция отправления</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Станция отправления"; ObjectID = "1YZ-oM-Z3i";</note>
+      </trans-unit>
+      <trans-unit id="1eR-Jy-1qj.text">
+        <source>Страна</source>
+        <target>Страна</target>
+        <note>Class = "UILabel"; text = "Страна"; ObjectID = "1eR-Jy-1qj";</note>
+      </trans-unit>
+      <trans-unit id="1ho-Tk-HSZ.title">
+        <source>Выбор станций</source>
+        <target>Выбор станций</target>
+        <note>Class = "UINavigationItem"; title = "Выбор станций"; ObjectID = "1ho-Tk-HSZ";</note>
+      </trans-unit>
+      <trans-unit id="1xo-ht-gWb.text">
+        <source>Страна</source>
+        <target>Страна</target>
+        <note>Class = "UILabel"; text = "Страна"; ObjectID = "1xo-ht-gWb";</note>
+      </trans-unit>
+      <trans-unit id="3GI-no-IO1.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "3GI-no-IO1";</note>
+      </trans-unit>
+      <trans-unit id="3We-ra-cC9.headerTitle">
+        <source>Координаты</source>
+        <target>Координаты</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Координаты"; ObjectID = "3We-ra-cC9";</note>
+      </trans-unit>
+      <trans-unit id="5bE-b0-RGe.normalTitle">
+        <source>Очистить</source>
+        <target>Очистить</target>
+        <note>Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "5bE-b0-RGe";</note>
+      </trans-unit>
+      <trans-unit id="06W-xd-X30.text">
+        <source>Город</source>
+        <target>Город</target>
+        <note>Class = "UILabel"; text = "Город"; ObjectID = "06W-xd-X30";</note>
+      </trans-unit>
+      <trans-unit id="9r4-Bh-57n.title">
+        <source>Отмена</source>
+        <target>Отмена</target>
+        <note>Class = "UIBarButtonItem"; title = "Отмена"; ObjectID = "9r4-Bh-57n";</note>
+      </trans-unit>
+      <trans-unit id="65N-yx-Sic.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "65N-yx-Sic";</note>
+      </trans-unit>
+      <trans-unit id="Aij-xF-bTs.text">
+        <source>Долгота</source>
+        <target>Долгота</target>
+        <note>Class = "UILabel"; text = "Долгота"; ObjectID = "Aij-xF-bTs";</note>
+      </trans-unit>
+      <trans-unit id="BdI-2s-KkB.text">
+        <source>Название</source>
+        <target>Название</target>
+        <note>Class = "UILabel"; text = "Название"; ObjectID = "BdI-2s-KkB";</note>
+      </trans-unit>
+      <trans-unit id="CjI-xW-7cb.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "CjI-xW-7cb";</note>
+      </trans-unit>
+      <trans-unit id="CxA-Do-mrS.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "CxA-Do-mrS";</note>
+      </trans-unit>
+      <trans-unit id="FBu-Iq-hKI.normalTitle">
+        <source>Очистить</source>
+        <target>Очистить</target>
+        <note>Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "FBu-Iq-hKI";</note>
+      </trans-unit>
+      <trans-unit id="FkH-Gh-OO2.headerTitle">
+        <source>Общая информация</source>
+        <target>Общая информация</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Общая информация"; ObjectID = "FkH-Gh-OO2";</note>
+      </trans-unit>
+      <trans-unit id="FuC-QM-fKv.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "FuC-QM-fKv";</note>
+      </trans-unit>
+      <trans-unit id="GS6-tn-e0D.text">
+        <source>Широта</source>
+        <target>Широта</target>
+        <note>Class = "UILabel"; text = "Широта"; ObjectID = "GS6-tn-e0D";</note>
+      </trans-unit>
+      <trans-unit id="IIu-VM-IUq.headerTitle">
+        <source>Дата отправления</source>
+        <target>Дата отправления</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Дата отправления"; ObjectID = "IIu-VM-IUq";</note>
+      </trans-unit>
+      <trans-unit id="JnB-3G-fan.text">
+        <source>Title</source>
+        <target>Title</target>
+        <note>Class = "UILabel"; text = "Title"; ObjectID = "JnB-3G-fan";</note>
+      </trans-unit>
+      <trans-unit id="PBb-BM-bxN.headerTitle">
+        <source>Станция назначения</source>
+        <target>Станция назначения</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Станция назначения"; ObjectID = "PBb-BM-bxN";</note>
+      </trans-unit>
+      <trans-unit id="S74-W9-atW.text">
+        <source>Регион</source>
+        <target>Регион</target>
+        <note>Class = "UILabel"; text = "Регион"; ObjectID = "S74-W9-atW";</note>
+      </trans-unit>
+      <trans-unit id="UwU-zt-y0S.normalTitle">
+        <source>Очистить</source>
+        <target>Очистить</target>
+        <note>Class = "UIButton"; normalTitle = "Очистить"; ObjectID = "UwU-zt-y0S";</note>
+      </trans-unit>
+      <trans-unit id="WKO-SD-xFK.text">
+        <source>Город</source>
+        <target>Город</target>
+        <note>Class = "UILabel"; text = "Город"; ObjectID = "WKO-SD-xFK";</note>
+      </trans-unit>
+      <trans-unit id="YcX-sx-3Cs.title">
+        <source>Готово</source>
+        <target>Готово</target>
+        <note>Class = "UIBarButtonItem"; title = "Готово"; ObjectID = "YcX-sx-3Cs";</note>
+      </trans-unit>
+      <trans-unit id="a9z-ho-0Oz.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "a9z-ho-0Oz";</note>
+      </trans-unit>
+      <trans-unit id="aVH-kC-mZe.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "aVH-kC-mZe";</note>
+      </trans-unit>
+      <trans-unit id="bl2-T4-WqG.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "bl2-T4-WqG";</note>
+      </trans-unit>
+      <trans-unit id="e9L-vZ-O2z.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "e9L-vZ-O2z";</note>
+      </trans-unit>
+      <trans-unit id="e96-H4-ha8.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "e96-H4-ha8";</note>
+      </trans-unit>
+      <trans-unit id="igF-1u-D0f.text">
+        <source>Label</source>
+        <target>Label</target>
+        <note>Class = "UILabel"; text = "Label"; ObjectID = "igF-1u-D0f";</note>
+      </trans-unit>
+      <trans-unit id="iz0-FU-SCd.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "iz0-FU-SCd";</note>
+      </trans-unit>
+      <trans-unit id="oWH-E0-xdS.title">
+        <source>Countries</source>
+        <target>Countries</target>
+        <note>Class = "UINavigationItem"; title = "Countries"; ObjectID = "oWH-E0-xdS";</note>
+      </trans-unit>
+      <trans-unit id="pVe-eV-UYk.headerTitle">
+        <source>Станция</source>
+        <target>Станция</target>
+        <note>Class = "UITableViewSection"; headerTitle = "Станция"; ObjectID = "pVe-eV-UYk";</note>
+      </trans-unit>
+      <trans-unit id="rNp-Hl-Vsg.title">
+        <source>Уточните место</source>
+        <target>Уточните место</target>
+        <note>Class = "UINavigationItem"; title = "Уточните место"; ObjectID = "rNp-Hl-Vsg";</note>
+      </trans-unit>
+      <trans-unit id="sze-jH-Tnk.text">
+        <source>Дата</source>
+        <target>Дата</target>
+        <note>Class = "UILabel"; text = "Дата"; ObjectID = "sze-jH-Tnk";</note>
+      </trans-unit>
+      <trans-unit id="vKa-9h-QYf.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "vKa-9h-QYf";</note>
+      </trans-unit>
+      <trans-unit id="vMK-JX-b7c.text">
+        <source>Район</source>
+        <target>Район</target>
+        <note>Class = "UILabel"; text = "Район"; ObjectID = "vMK-JX-b7c";</note>
+      </trans-unit>
+      <trans-unit id="zwC-sQ-xQW.text">
+        <source>Detail</source>
+        <target>Detail</target>
+        <note>Class = "UILabel"; text = "Detail"; ObjectID = "zwC-sQ-xQW";</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Stations/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="StationsTests/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="StationsUITests/Info.plist" source-language="en" datatype="plaintext" target-language="ru">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

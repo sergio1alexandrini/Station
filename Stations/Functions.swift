@@ -9,11 +9,6 @@
 import UIKit
 
 
-func afterDelay(seconds: Double, closure: () -> ()) {
-    let when = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
-    dispatch_after(when, dispatch_get_main_queue(), closure)
-}
-
 func GetDataFromCities(cities : [City]) -> ([Int : [City]], [Country], [String : Country]){
     var i = 0;
     var countries = [Country]()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BG8-b9-Zpa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4Nj-vV-7Of">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -347,12 +347,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Уточните место" id="rNp-Hl-Vsg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9r4-Bh-57n">
+                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="9r4-Bh-57n">
                             <connections>
                                 <action selector="cancel" destination="Jl9-yl-TVS" id="Tee-t9-IOZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="YcX-sx-3Cs">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" style="done" id="YcX-sx-3Cs">
                             <connections>
                                 <action selector="done" destination="Jl9-yl-TVS" id="RNn-Nt-YIF"/>
                             </connections>
@@ -407,6 +407,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YHL-5G-fc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1153" y="1043"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="Spd-ph-LhQ">
+            <objects>
+                <viewController id="4Nj-vV-7Of" customClass="LoadingViewController" customModule="Stations" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AIc-Ul-JSg"/>
+                        <viewControllerLayoutGuide type="bottom" id="VVP-6i-cHU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSI-AG-qEf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPb-3x-QQG">
+                                <rect key="frame" x="139" y="228.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QtB-K0-d7H">
+                                <rect key="frame" x="85" y="283" width="150" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QtB-K0-d7H" firstAttribute="top" secondItem="IPb-3x-QQG" secondAttribute="bottom" constant="34" id="15y-bm-gbZ"/>
+                            <constraint firstItem="QtB-K0-d7H" firstAttribute="leading" secondItem="wSI-AG-qEf" secondAttribute="leading" constant="85" id="5PF-A2-3Yh"/>
+                            <constraint firstItem="IPb-3x-QQG" firstAttribute="centerX" secondItem="wSI-AG-qEf" secondAttribute="centerX" id="7n1-G0-j64"/>
+                            <constraint firstAttribute="trailing" secondItem="QtB-K0-d7H" secondAttribute="trailing" constant="85" id="HWt-Le-I0M"/>
+                            <constraint firstItem="QtB-K0-d7H" firstAttribute="centerY" secondItem="wSI-AG-qEf" secondAttribute="centerY" id="HYb-Bb-aze"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="progressLabel" destination="IPb-3x-QQG" id="abQ-pW-Wr5"/>
+                        <outlet property="progressView" destination="QtB-K0-d7H" id="9Gg-Q5-yr9"/>
+                        <segue destination="BG8-b9-Zpa" kind="presentation" identifier="Start" id="97u-qT-fJQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5m-b0-o8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QwB-59-w3s">
@@ -658,8 +700,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4QX-al-Voe"/>
         <segue reference="sWd-pz-vgC"/>
-        <segue reference="ZLz-4N-Sgh"/>
+        <segue reference="4QX-al-Voe"/>
+        <segue reference="fDv-C8-S0x"/>
     </inferredMetricsTieBreakers>
 </document>

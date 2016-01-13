@@ -3,14 +3,14 @@
  use_frameworks!
 
 target 'Stations' do
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'SwiftyJSON', '~> 2.3'
 end
 
 target 'StationsTests' do
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'SwiftyJSON', '~> 2.3'
 end
 
 target 'StationsUITests' do
-pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'SwiftyJSON', '~> 2.3'
 end
 

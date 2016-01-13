@@ -69,7 +69,6 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.backgroundColor = UIColor.clearColor()
         
         searchController.hidesNavigationBarDuringPresentation = false
-        //self.navigationController!.navigationBar.translucent = false
 
         self.presentViewController(self.searchController, animated:true, completion:nil);
         

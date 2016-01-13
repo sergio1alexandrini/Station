@@ -40,7 +40,7 @@ StationsPickerDelegate{
     var datePickerHeight : CGFloat = 217
     var tableRowHeight: CGFloat = 44
     
-    var dataModel = DataModel()
+    var dataModel : DataModel!
     var currentCountryFrom : Country!
     var currentCountryTo :  Country!
     
@@ -99,9 +99,6 @@ StationsPickerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        dataModel.LoadData()
-        
         configureLabels()
         updateDueDateLabel()
     }
@@ -196,7 +193,6 @@ StationsPickerDelegate{
             vc.currentStation = currentStationFrom
         }else if segue.identifier == "ShowStationInfoTo" {
             let vc = segue.destinationViewController as!  StationInfoViewController
-            print(currentStationTo)
             vc.currentStation = currentStationTo
         }
     }
@@ -223,11 +219,11 @@ StationsPickerDelegate{
         
         if let pickerCell = tableView.cellForRowAtIndexPath(indexPathDatePicker) {
             let datePicker = pickerCell.viewWithTag(100) as! UIDatePicker
+            datePicker.center.x = tableView.center.x
             datePicker.setDate(date, animated: false)
         }
-        
-        let offset = tableView.frame.origin.y
-        tableView.setContentOffset(CGPointMake(0, offset + tableRowHeight), animated: true)
+
+        tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 2), atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
     
     func hideDatePicker() {

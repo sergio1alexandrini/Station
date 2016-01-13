@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		187F2AC51C2B2CAF0012F95E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F2AC41C2B2CAF0012F95E /* Country.swift */; };
 		187F2AC71C2B2D600012F95E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187F2AC61C2B2D600012F95E /* Location.swift */; };
+		18887F411C345EC700B3AEE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18887F401C345EC700B3AEE4 /* ViewController.swift */; };
+		18887F481C346AC200B3AEE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18887F4A1C346AC200B3AEE4 /* InfoPlist.strings */; };
+		18887F4D1C346AC200B3AEE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18887F4F1C346AC200B3AEE4 /* InfoPlist.strings */; };
+		18887F521C346AC300B3AEE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18887F541C346AC300B3AEE4 /* InfoPlist.strings */; };
 		188B11941C2D214700AA1D24 /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 188B11931C2D214700AA1D24 /* allStations.json */; };
 		18E556211C288D9A00EB704B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E556201C288D9A00EB704B /* AppDelegate.swift */; };
 		18E556231C288D9A00EB704B /* CityAndCountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E556221C288D9A00EB704B /* CityAndCountryTableViewController.swift */; };
@@ -51,6 +55,12 @@
 /* Begin PBXFileReference section */
 		187F2AC41C2B2CAF0012F95E /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		187F2AC61C2B2D600012F95E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		18887F401C345EC700B3AEE4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18887F441C3468EC00B3AEE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		18887F451C3468ED00B3AEE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		18887F491C346AC200B3AEE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18887F4E1C346AC200B3AEE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18887F531C346AC300B3AEE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		188B11931C2D214700AA1D24 /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
 		18E5561D1C288D9900EB704B /* Stations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18E556201C288D9A00EB704B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +123,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18887F421C3465BD00B3AEE4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				18E556571C28A22600EB704B /* Functions.swift */,
+				18ED7BBD1C2CA5FC001C0199 /* JsonParser.swift */,
+				18ED7BC11C2CAA75001C0199 /* DataModel.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		18887F431C3465EC00B3AEE4 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				18E556531C289E5300EB704B /* Station.swift */,
+				18E556551C28A01B00EB704B /* City.swift */,
+				18E5565D1C29EE1300EB704B /* PickType.swift */,
+				187F2AC41C2B2CAF0012F95E /* Country.swift */,
+				187F2AC61C2B2D600012F95E /* Location.swift */,
+			);
+			name = Location;
+			sourceTree = "<group>";
+		};
 		18E556141C288D9900EB704B = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +170,7 @@
 		18E5561F1C288D9A00EB704B /* Stations */ = {
 			isa = PBXGroup;
 			children = (
+				18887F4F1C346AC200B3AEE4 /* InfoPlist.strings */,
 				188B11931C2D214700AA1D24 /* allStations.json */,
 				18E556521C289D9300EB704B /* Models */,
 				18ED7BC31C2CB33F001C0199 /* Main.storyboard */,
@@ -149,6 +182,7 @@
 				18E556591C28B46300EB704B /* SearchTableViewController.swift */,
 				18E5565B1C29E59800EB704B /* StationsViewController.swift */,
 				18ED7BBB1C2B52B7001C0199 /* StationInfoTableViewController.swift */,
+				18887F401C345EC700B3AEE4 /* ViewController.swift */,
 			);
 			path = Stations;
 			sourceTree = "<group>";
@@ -156,6 +190,7 @@
 		18E556341C288D9A00EB704B /* StationsTests */ = {
 			isa = PBXGroup;
 			children = (
+				18887F4A1C346AC200B3AEE4 /* InfoPlist.strings */,
 				18E556351C288D9A00EB704B /* StationsTests.swift */,
 				18E556371C288D9A00EB704B /* Info.plist */,
 			);
@@ -165,6 +200,7 @@
 		18E5563F1C288D9A00EB704B /* StationsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				18887F541C346AC300B3AEE4 /* InfoPlist.strings */,
 				18E556401C288D9A00EB704B /* StationsUITests.swift */,
 				18E556421C288D9A00EB704B /* Info.plist */,
 			);
@@ -174,14 +210,8 @@
 		18E556521C289D9300EB704B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				18E556531C289E5300EB704B /* Station.swift */,
-				18E556551C28A01B00EB704B /* City.swift */,
-				18E556571C28A22600EB704B /* Functions.swift */,
-				18E5565D1C29EE1300EB704B /* PickType.swift */,
-				187F2AC41C2B2CAF0012F95E /* Country.swift */,
-				187F2AC61C2B2D600012F95E /* Location.swift */,
-				18ED7BBD1C2CA5FC001C0199 /* JsonParser.swift */,
-				18ED7BC11C2CAA75001C0199 /* DataModel.swift */,
+				18887F431C3465EC00B3AEE4 /* Location */,
+				18887F421C3465BD00B3AEE4 /* Data */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -326,6 +356,7 @@
 				18E556281C288D9A00EB704B /* Assets.xcassets in Resources */,
 				188B11941C2D214700AA1D24 /* allStations.json in Resources */,
 				18ED7BC51C2CB33F001C0199 /* Main.storyboard in Resources */,
+				18887F4D1C346AC200B3AEE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18887F481C346AC200B3AEE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18887F521C346AC300B3AEE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +510,7 @@
 				187F2AC51C2B2CAF0012F95E /* Country.swift in Sources */,
 				18ED7BBE1C2CA5FC001C0199 /* JsonParser.swift in Sources */,
 				187F2AC71C2B2D600012F95E /* Location.swift in Sources */,
+				18887F411C345EC700B3AEE4 /* ViewController.swift in Sources */,
 				18ED7BBC1C2B52B7001C0199 /* StationInfoTableViewController.swift in Sources */,
 				18E556231C288D9A00EB704B /* CityAndCountryTableViewController.swift in Sources */,
 				18E5565E1C29EE1300EB704B /* PickType.swift in Sources */,
@@ -521,10 +555,35 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		18887F4A1C346AC200B3AEE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18887F491C346AC200B3AEE4 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18887F4F1C346AC200B3AEE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18887F4E1C346AC200B3AEE4 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18887F541C346AC300B3AEE4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18887F531C346AC300B3AEE4 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		18E556291C288D9A00EB704B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				18E5562A1C288D9A00EB704B /* Base */,
+				18887F451C3468ED00B3AEE4 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -533,6 +592,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18ED7BC41C2CB33F001C0199 /* Base */,
+				18887F441C3468EC00B3AEE4 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -576,7 +636,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -614,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
